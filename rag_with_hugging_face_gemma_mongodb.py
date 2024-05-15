@@ -10,10 +10,10 @@ Original file is located at
 [![View Article](https://img.shields.io/badge/View%20Article-blue)](https://www.mongodb.com/developer/products/atlas/gemma-mongodb-huggingface-rag/)
 """
 
-# !pip install datasets pandas pymongo sentence_transformers
-# !pip install -U transformers
+!pip install datasets pandas pymongo sentence_transformers
+!pip install -U transformers
 # Install below if using GPU
-# !pip install accelerate
+!pip install accelerate
 
 # Load Dataset
 from datasets import load_dataset
