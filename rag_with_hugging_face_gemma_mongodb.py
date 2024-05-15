@@ -25,7 +25,7 @@ dataset = load_dataset("MongoDB/embedded_movies")
 # Convert the dataset to a pandas dataframe
 dataset_df = pd.DataFrame(dataset["train"])
 
-# dataset_df.head(5)
+dataset_df.head(5)
 
 # Data Preparation
 
@@ -36,7 +36,7 @@ print(dataset_df.isnull().sum())
 
 # Remove the plot_embedding from each data point in the dataset as we are going to create new embeddings with an open source embedding model from Hugging Face
 dataset_df = dataset_df.drop(columns=["plot_embedding"])
-# dataset_df.head(5)
+dataset_df.head(5)
 
 from sentence_transformers import SentenceTransformer
 
@@ -56,7 +56,7 @@ def get_embedding(text: str) -> list[float]:
 
 dataset_df["embedding"] = dataset_df["fullplot"].apply(get_embedding)
 
-# dataset_df.head()
+dataset_df.head()
 
 # Commented out IPython magic to ensure Python compatibility.
 import os
@@ -169,9 +169,9 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 token = "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"
 tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b-it", token=token)
 # CPU Enabled uncomment below 👇🏽
-model = AutoModelForCausalLM.from_pretrained("google/gemma-2b-it", token=token)
+# model = AutoModelForCausalLM.from_pretrained("google/gemma-2b-it")
 # GPU Enabled use below 👇🏽
-#model = AutoModelForCausalLM.from_pretrained("google/gemma-2b-it", device_map="auto", token=token)
+model = AutoModelForCausalLM.from_pretrained("google/gemma-2b-it", device_map="auto", token=token)
 
 # Moving tensors to GPU
 input_ids = tokenizer(combined_information, return_tensors="pt").to("cuda")
