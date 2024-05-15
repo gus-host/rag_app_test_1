@@ -74,7 +74,7 @@ def get_mongo_client(mongo_uri):
     return None
 
 # Set up MongoDB URI as environment variable
-# %env MONGO_URI=mongodb+srv://chrisdev:chrisdev@cluster0.fi8buj7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+%env MONGO_URI=mongodb+srv://chrisdev:chrisdev@cluster0.fi8buj7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 mongo_uri = os.environ.get('MONGO_URI')
 
