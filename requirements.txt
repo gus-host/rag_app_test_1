@@ -2,4 +2,3 @@ datasets
 pandas 
 pymongo 
 sentence_transformers
-accelerate

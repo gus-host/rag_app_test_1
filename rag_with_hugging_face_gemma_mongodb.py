@@ -169,9 +169,9 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 token = "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"
 tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b-it", token=token)
 # CPU Enabled uncomment below 👇🏽
-# model = AutoModelForCausalLM.from_pretrained("google/gemma-2b-it")
+model = AutoModelForCausalLM.from_pretrained("google/gemma-2b-it", token=token)
 # GPU Enabled use below 👇🏽
-model = AutoModelForCausalLM.from_pretrained("google/gemma-2b-it", device_map="auto", token=token)
+#model = AutoModelForCausalLM.from_pretrained("google/gemma-2b-it", device_map="auto", token=token)
 
 # Moving tensors to GPU
 input_ids = tokenizer(combined_information, return_tensors="pt").to("cuda")
